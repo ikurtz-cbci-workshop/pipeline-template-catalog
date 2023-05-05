@@ -78,7 +78,7 @@ pipeline {
           }
           steps {
             container ('maven') {
-              sh './jenkins/scripts/deliver.sh'
+              sshPublisher(publishers: [sshPublisherDesc(configName: 'tomcat', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/opt/tomcat/apache-tomcat-9.0.41/webapps/', remoteDirectorySDF: false, removePrefix: '', sourceFiles: '**/*.jar')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
             }
           }
         }
