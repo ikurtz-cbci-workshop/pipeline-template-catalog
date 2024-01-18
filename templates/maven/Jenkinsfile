@@ -39,9 +39,7 @@ pipeline {
             anyOf {
               branch 'main'
               branch 'pr-*'
-            }
-            not {
-              triggeredBy 'EventTriggerCause' 
+              triggeredBy 'EventTriggerCause'
             }
           }
           steps {
