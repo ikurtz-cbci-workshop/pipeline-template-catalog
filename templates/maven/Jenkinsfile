@@ -74,9 +74,10 @@ pipeline {
             anyOf {
               branch 'main'
               branch 'pr-*'
+            }
+            not {
               triggeredBy 'EventTriggerCause' 
             }
-           }
           }
           steps {
              container ('maven') {
@@ -93,7 +94,8 @@ pipeline {
           when {
             beforeAgent true
             branch 'main'
-            triggeredBy 'EventTriggerCause' 
+            not {
+              triggeredBy 'EventTriggerCause' 
             }
           }
           steps {
@@ -104,3 +106,5 @@ pipeline {
         }
       }
     }
+  }
+}
