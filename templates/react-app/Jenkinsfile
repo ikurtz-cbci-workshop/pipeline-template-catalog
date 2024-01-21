@@ -6,6 +6,7 @@ pipeline {
     buildDiscarder(logRotator(numToKeepStr: '10'))
     skipDefaultCheckout true
     preserveStashes(buildCount: 10)
+    timeout(time: 10, unit: 'MINUTES') 
   }
   environment {
     repoOwner = "${repoOwner}"
