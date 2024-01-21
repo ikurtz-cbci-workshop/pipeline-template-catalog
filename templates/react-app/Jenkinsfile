@@ -24,9 +24,11 @@ pipeline {
       steps {
             checkout scm           
             container('nodejs') {
+              readCache 'npm-cache'
               sh '''
                  npm install
                  '''
+              writeCache includes: 'npm_modules', name: 'npm-cache'
             }
       } 
     }
