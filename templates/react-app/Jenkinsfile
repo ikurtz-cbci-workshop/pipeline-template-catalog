@@ -3,7 +3,7 @@ def testPodYaml = libraryResource 'podtemplates/react/react-test-pod.yaml'
 pipeline {
   agent none
   options { 
-    timeout(time: 10, unit: 'MINUTES')
+    timeout(time: 30, unit: 'MINUTES')
     buildDiscarder(logRotator(numToKeepStr: '10'))
     skipDefaultCheckout true
     preserveStashes(buildCount: 10)
