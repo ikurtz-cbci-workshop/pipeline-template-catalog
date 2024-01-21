@@ -1,4 +1,4 @@
-library 'cb-days@master'
+library 'pipeline-library'
 def testPodYaml = libraryResource 'podtemplates/react/react-test-pod.yml'
 pipeline {
   agent none
