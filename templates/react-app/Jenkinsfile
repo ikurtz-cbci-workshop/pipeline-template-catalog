@@ -1,5 +1,5 @@
 library 'pipeline-library'
-def testPodYaml = libraryResource 'resources/podtemplates/react/react-test-pod.yaml'
+def testPodYaml = libraryResource 'podtemplates/react/react-test-pod.yaml'
 pipeline {
   agent none
   options {
