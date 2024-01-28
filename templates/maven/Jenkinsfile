@@ -48,7 +48,7 @@ pipeline {
             echo "line coverage from cloudbees-ci.yml: ${lineCoverage}"
             container ('maven') {
               readCache 'mvn-cache'
-              sh 'mvn -Duser.home=/var/maven -V -q -e clean verify -Dmaven.test.failure.ignore'
+              sh 'mvn -Duser.home=/var/maven -V -q -e clean verify -Dmaven.test.failure.ignore package'
               writeCache includes: '.m2/**', name: 'mvn-cache'
             }
           }
