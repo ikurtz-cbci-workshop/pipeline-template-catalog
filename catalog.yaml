@@ -1,4 +1,4 @@
-name: workshop-catalog
+name: ikurtz-workshop-catalog
 displayName: CloudBees CI Workshop Template Catalog
 version: 1
 type: pipeline-template-catalog
